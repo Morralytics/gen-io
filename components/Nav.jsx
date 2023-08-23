@@ -17,10 +17,10 @@ const Nav = () => {
       const response = await getProviders();
 
       setProviders(response);
-    }
+    };
 
     setProviders();
-  }, [])
+  }, []);
 
   return (
     <nav className="flex-between w-full mb-16 pt-3">
@@ -56,6 +56,24 @@ const Nav = () => {
                 className="rounded-full"
               />
             </Link>
+          </div>
+        ) : (
+          <></>
+        )}
+      </div>
+
+      {/* Mobile Nav */}
+      <div className="sm:hidden flex relative">
+        {isUserLoggedIn ? (
+          <div className="flex">
+            <Image
+              src=""
+              alt="profile"
+              width={37}
+              height={37}
+              className="rounded-full"
+              onClick={() => {}}
+            />
           </div>
         ) : (
           <></>
