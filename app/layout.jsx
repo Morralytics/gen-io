@@ -1,5 +1,7 @@
 import '@styles/global.css';
 
+import Nav from '@components/Nav';
+
 export const metadata= {
     title: 'Gen-io',
     description: 'Discover & Share Generative AI Prompts'
@@ -14,6 +16,7 @@ const RootLayout = ({ children }) => {
             </div>
 
             <main className='app'>
+                <Nav />
                 {children}
             </main>
         </body>
