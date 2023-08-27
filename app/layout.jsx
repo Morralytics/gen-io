@@ -1,27 +1,30 @@
-import '@styles/global.css';
+import "@styles/global.css";
 
-import Nav from '@components/Nav';
+import Nav from "@components/Nav";
+import Provider from "@components/Provider";
 
-export const metadata= {
-    title: 'Gen-io',
-    description: 'Discover & Share Generative AI Prompts'
-}
+export const metadata = {
+  title: "Gen-io",
+  description: "Discover & Share Generative AI Prompts",
+};
 
 const RootLayout = ({ children }) => {
   return (
-    <html lang='en'>
-        <body>
-            <div className='main'>
-                <div className='gradient' />
-            </div>
+    <html lang="en">
+      <body>
+        <Provider>
+          <div className="main">
+            <div className="gradient" />
+          </div>
 
-            <main className='app'>
-                <Nav />
-                {children}
-            </main>
-        </body>
+          <main className="app">
+            <Nav />
+            {children}
+          </main>
+        </Provider>
+      </body>
     </html>
-  )
-}
+  );
+};
 
 export default RootLayout;
