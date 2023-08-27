@@ -1,5 +1,6 @@
 import NextAuth from "next-auth/next";
 import GoogleProvider from "next-auth/providers/google";
+import { connectToDB } from "@utils/database";
 
 const handler = NextAuth({
     providers: [
@@ -15,8 +16,16 @@ const handler = NextAuth({
         try {
             // Serverless -> lambda -> Database
             // Do need to make a connection to a database
-        } catch (err) {
+            await connectToDB();
 
+            // Check if a user exists
+
+            // If not, create new user
+
+            return true;
+        } catch (err) {
+            console.log(err);
+            return false;
         }
     }
 })
