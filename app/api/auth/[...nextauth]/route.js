@@ -4,16 +4,21 @@ import GoogleProvider from "next-auth/providers/google";
 const handler = NextAuth({
     providers: [
         GoogleProvider({
-            clientId: '',
-            clientSecret: '',
+            clientId: process.env.GOOGLE_ID,
+            clientSecret: process.env.GOOGLE_CLIENT_SECRET,
         })
     ],
     async session({ session }) {
 
     },
     async signIn({ profile }) {
+        try {
+            // Serverless -> lambda -> Database
+            // Do need to make a connection to a database
+        } catch (err) {
 
+        }
     }
 })
 
-export{ handler as GET, handler as POST };
+export { handler as GET, handler as POST };
