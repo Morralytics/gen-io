@@ -48,10 +48,9 @@ const Nav = () => {
             <button type="button" onClick={signOut} className="outline_btn">
               Sign Out
             </button>
-
             <Link href="/profile">
               <Image
-                src=""
+                src={session?.user.image}
                 alt="profile"
                 width={37}
                 height={37}
@@ -81,7 +80,7 @@ const Nav = () => {
         {session?.user ? (
           <div className="flex">
             <Image
-              src=""
+              src={session?.user.image}
               alt="profile"
               width={37}
               height={37}
