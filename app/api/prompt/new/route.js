@@ -11,11 +11,11 @@ export const POST = async (req) => {
             prompt,
             tag,
         });
-
+        console.log(tag)
         await newPrompt.save();
 
         return new Response(JSON.stringify(newPrompt), { status: 201 })
     } catch (err) {
         return new Response('Failed to create a new prompt', { status: 500 });
     }
-}
+};
