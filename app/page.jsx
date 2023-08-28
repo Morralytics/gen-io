@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import Feed from '@components/Feed';
 
 const Home = () => {
   return (
@@ -11,6 +12,8 @@ const Home = () => {
         <p className='desc text-center'>
             Gen-io is an open-source AI prompting tool built for the modern world to generate, discover, and share innovative prompts
         </p>
+
+        <Feed />
     </section>
   )
 }
