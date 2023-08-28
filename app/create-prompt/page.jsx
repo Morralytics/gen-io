@@ -14,10 +14,16 @@ const CreatePrompt = () => {
   });
 
   const createPrompt = () => {
-    
+
   }
 
-  return <Form />;
+  return <Form 
+    type='Create'
+    post={post}
+    setPost={setPost}
+    submitting={submitting}
+    handleSubmit={createPrompt}
+  />;
 };
 
 export default CreatePrompt;
