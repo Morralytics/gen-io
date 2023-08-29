@@ -21,8 +21,19 @@ const Feed = () => {
 
     const [searchText, setSearchText] = useState('');
     const [posts, setPosts] = useState([])
-    const handleSearchChange = (e) => {
 
+    const filterPrompts = (searchText) => {
+        const regex = new RegExp(searchText, 'i');
+
+        return posts.filter((post) => {
+            regex.test(post.creator.username) ||
+            regex.test(post.tag) ||
+            regex.test(post.prompt)
+        });
+    };
+
+    const handleSearchChange = (e) => {
+        setSearchText(e.target.value);
     }
 
     useEffect(() => {
