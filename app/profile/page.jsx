@@ -27,31 +27,39 @@ const MyProfile = () => {
   };
 
   const handleDelete = async (post) => {
-    const hasConfirmed = confirm('Are you sure you want to delete this prompt?');
+    const hasConfirmed = confirm(
+      "Are you sure you want to delete this prompt?"
+    );
 
-    if(hasConfirmed) {
+    if (hasConfirmed) {
       try {
         await fetch(`/api/prompt/${post._id.toString()}`, {
-          method: 'DELETE'
+          method: "DELETE",
         });
 
         const filterPosts = posts.filter((p) => p._id !== post._id);
 
         setPosts(filterPosts);
       } catch (error) {
-        console.log(error)
+        console.log(error);
       }
     }
   };
 
   return (
-    <Profile
-      name="My"
-      desc="Welcome to your personalized profile page"
-      data={posts}
-      handleEdit={handleEdit}
-      handleDelete={handleDelete}
-    />
+    <>
+      {session?.user.id ? (
+        <Profile
+          name="My"
+          desc="Welcome to your personalized profile page"
+          data={posts}
+          handleEdit={handleEdit}
+          handleDelete={handleDelete}
+        />
+      ) : (
+        <>{router.push("/")}</>
+      )}
+    </>
   );
 };
 

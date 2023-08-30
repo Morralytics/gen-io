@@ -7,9 +7,11 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 // Import will utilize nextjs to make signing in and out easy
 import { signIn, signOut, useSession, getProviders } from "next-auth/react";
+import { useRouter } from "next/navigation";
 
 const Nav = () => {
   const { data: session } = useSession();
+  const router = useRouter();
 
   const [providers, setProviders] = useState(null);
   const [toggleDropdown, setToggleDropdown] = useState(false);
@@ -23,6 +25,11 @@ const Nav = () => {
 
     setUpProviders();
   }, []);
+
+  const signOutGoHome = () => {
+    signOut();
+    router.push('/');
+  }
 
   return (
     <nav className="flex-between w-full mb-16 pt-3">
