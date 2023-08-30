@@ -2,11 +2,13 @@
 
 import { useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
+import { useSession } from "next-auth/react";
 
 import Form from "@components/Form";
 
 const EditPrompt = () => {
   const router = useRouter();
+  const { data:session } = useSession();
   const searchParams = useSearchParams();
   const promptId = searchParams.get("id");
 
@@ -55,13 +57,19 @@ const EditPrompt = () => {
     };
 
   return (
-    <Form
-      type="Edit"
-      post={post}
-      setPost={setPost}
-      submitting={submitting}
-      handleSubmit={updatePrompt}
-    />
+    <>
+    {session?.user ? (
+      <Form
+        type="Edit"
+        post={post}
+        setPost={setPost}
+        submitting={submitting}
+        handleSubmit={updatePrompt}
+      />
+    ) : (
+      <>{router.push('/')}</>
+    )}
+    </>
   );
 };
 
