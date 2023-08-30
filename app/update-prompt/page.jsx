@@ -19,6 +19,12 @@ const EditPrompt = () => {
   });
 
   useEffect(() => {
+    if (!session?.user) {
+      router.push("/");
+    }
+  }, [session]);
+  
+  useEffect(() => {
     const getPromptDetails = async () => {
       const response = await fetch(`/api/prompt/${promptId}`);
       const data = await response.json();

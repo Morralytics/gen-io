@@ -1,15 +1,24 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { useSearchParams } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
+import { useSession } from "next-auth/react";
 
 import Profile from "@components/Profile";
 
 const UserProfile = ({ params }) => {
   const searchParams = useSearchParams();
   const userName = searchParams.get('name');
+  const { data: session } = useSession();
+  const router = useRouter();
 
   const [userPosts, setUserPosts] = useState([]);
+
+  useEffect(() => {
+    if (!session?.user) {
+      router.push("/");
+    }
+  }, [session]);
 
   useEffect(() => {
     const fetchPosts = async () => {

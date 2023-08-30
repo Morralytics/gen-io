@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 
@@ -15,6 +15,12 @@ const CreatePrompt = () => {
     prompt: "",
     tag: "",
   });
+
+  useEffect(() => {
+    if (!session?.user) {
+      router.push("/");
+    }
+  }, [session]);
 
   const createPrompt = async (e) => {
     e.preventDefault();
@@ -40,19 +46,13 @@ const CreatePrompt = () => {
   };
 
   return (
-    <>
-      {session?.user ? (
-        <Form
-          type="Create"
-          post={post}
-          setPost={setPost}
-          submitting={submitting}
-          handleSubmit={createPrompt}
-        />
-      ) : (
-        <>{router.push("/")}</>
-      )}
-    </>
+    <Form
+      type="Create"
+      post={post}
+      setPost={setPost}
+      submitting={submitting}
+      handleSubmit={createPrompt}
+    />
   );
 };
 
