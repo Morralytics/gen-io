@@ -1,34 +1,51 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Gen-io
 
-## Getting Started
+![License Badge](https://img.shields.io/badge/-Nextjs-61DAFB?logo=react&syle=flat&logoColor=white)
+![License Badge](https://img.shields.io/badge/-MongoDB-47A248?logo=mongodb&style=flat&logoColor=white)
+![License Badge](https://img.shields.io/badge/-Node.js-339933?logo=node.js&style=flat&logoColor=white)
+![License Badge](https://img.shields.io/badge/-Javascript-F7DF1E?logo=Javascript&syle=flat&logoColor=white)
+![License Badge](https://img.shields.io/badge/-.ENV-ECD53F?logo=.env&syle=flat&logoColor=white)
+![License Badge](https://img.shields.io/badge/-Vercel-black?logo=vercel&style=flat&logoColor=white)
+![License Badge](https://img.shields.io/badge/-Tailwind-lightblue?logo=tailwind&style=flat&logoColor=white)
 
-First, run the development server:
+## Description
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+This project is created using Nextjs, utilizing the powerful reactive nature of React and mobile first directive of Tailwind. The purpose of this project is to allow an open source web application that allows many users to share ChatGPT prompts that have helped them through their development process. Using AI to assist in clean code, or quick advice in a way of thinking, is an excellent resource that developers can utilize. Now, developers can share and manage which prompts worked best and contribute more information to the community.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Usage
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Once again, this is an open source, community based, assist tool that should be used to grow the development community with powerful AI assistance.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Preview
 
-## Learn More
+View the application live here: https://gen-io.vercel.app/
 
-To learn more about Next.js, take a look at the following resources:
+#### Homepage
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+<img src='./public/assets/images/Gen-io-Desktop-Main.png' width='720'>
+<img src='./public/assets/images/Gen-io-Mobile-Main.png' width='331'>
+<img src='./public/assets/images/Gen-io-Mobile-Main2.png' width='331'>
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+#### Personal Profile
 
-## Deploy on Vercel
+<img src='./public/assets/images/Gen-io-Desktop-MyProfile.png' width='720'>
+<img src='./public/assets/images/Gen-io-Mobile-MyProfile.png' width='360'>
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+#### User Profile
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+<img src='./public/assets/images/Gen-io-Desktop-UserProfile.png' width='720'>
+<img src='./public/assets/images/Gen-io-Mobile-UserProfile.png' width='360'>
+
+#### Create Post
+
+<img src='./public/assets/images/Gen-io-Desktop-Create.png' width='720'>
+<img src='./public/assets/images/Gen-io-Mobile-Create.png' width='360'>
+
+
+## Deployed on Vercel
+
+This project was built using Nextjs which allows for very easy deployment on Vercel. This was the first time using Vercel and I was surprised by just how simple the setup and deployment is since it is specifically built for Nextjs. I will certainly be using Vercel in the future for my Nextjs projects and continue building this project as new ideas come.
+
+## Further Development
+
+Since this is an open source project, I would love any future ideas that could be added. Always feel free to reach out to me as I am happy to work with more developers within the community!
