@@ -33,20 +33,26 @@ const CreatePrompt = () => {
         router.push("/");
       }
     } catch (err) {
-      console.log('Error');
+      console.log("Error");
     } finally {
       setSubmitting(false);
     }
   };
 
   return (
-    <Form
-      type="Create"
-      post={post}
-      setPost={setPost}
-      submitting={submitting}
-      handleSubmit={createPrompt}
-    />
+    <>
+      {session?.user ? (
+        <Form
+          type="Create"
+          post={post}
+          setPost={setPost}
+          submitting={submitting}
+          handleSubmit={createPrompt}
+        />
+      ) : (
+        <>{router.push("/")}</>
+      )}
+    </>
   );
 };
 
